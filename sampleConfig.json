@@ -1,0 +1,14 @@
+{
+"directory": "C:\\YOUR\\DIRECTORY\\HERE",
+  "clientOptions": {
+    "disabledEvents": [
+    "TYPING_START"
+    ]
+  },
+  "messageChannel": "Discord channelID to listen to (Numbers)",
+  "botToken": "Your bot token",
+  "webhook": {
+    "id": "Your Webhook ID (Numbers)",
+    "secret": "You Webhook Secret"
+  }
+}
