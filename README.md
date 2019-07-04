@@ -5,14 +5,14 @@
 
 <h3 align="center">Vanilla Minecraft - Discord Link</h3>
 
-<!-- <div align="center">
+<div align="center">
 
-  [![Status](https://img.shields.io/badge/status-active-success.svg)]() 
-  [![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
-  [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
+  [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fangeloanan%2FvanillaMCDiscordLink.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fangeloanan%2FvanillaMCDiscordLink?ref=badge_shield)
+  [![GitHub Issues](https://img.shields.io/github/issues/angeloanan/vanillaMCDiscordLink.svg)](https://github.com/angeloanan/vanillaMCDiscordLink/issues)
+  [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/angeloanan/vanillaMCDiscordLink.svg)](https://github.com/angeloanan/vanillaMCDiscordLink/pulls)
   [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
-</div> -->
+</div>
 
 ---
 
@@ -32,17 +32,17 @@
 
 ## 🧐 About <a name = "about"></a>
 
-This project links a Discord channel with a vanilla Minecraft server.  
-This project runs the server as a child process, collects messages by player and sends them to Discord. It also sends messages from Discord to Minecraft players by using `/tellraw`!
+This project links a Discord channel with a vanilla Minecraft server. Every time an in-game user chatted, the chat will be sent to the selected Discord Channel. And vice versa, every time a Discord user send a message on the selected channel, the message will be sent into the game by using `/tellraw`!
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine. See [deployment](#deployment) for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
+You will need to have NodeJS installed (use latest if possible)  
+You will also need a Discord Bot which have access to the selected channel with Webhook ready.  
 You need to rename the server .jar file to `server.jar` (TODO: Customizability)  
-You will also need a Discord Bot which have access to the selected channel with Webhook ready.
 
 ### Installing
 

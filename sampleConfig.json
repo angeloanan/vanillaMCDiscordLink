@@ -1,5 +1,6 @@
 {
-"directory": "C:\\YOUR\\DIRECTORY\\HERE",
+  "directory": "C:\\YOUR\\DIRECTORY\\HERE",
+  "launchArguments": "-Xms128M -Xms512M -XX:+UseG1GC",
   "clientOptions": {
     "disabledEvents": [
     "TYPING_START"

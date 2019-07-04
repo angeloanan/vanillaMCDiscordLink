@@ -17,7 +17,8 @@ const messageParser = /<([\w]+)> ([\S\t ]*)/
 
 let players = []
 
-const mcServer = spawn('java', ['-Xms128M', '-Xmx1024M', '-XX:+UseG1GC', '-jar', `${config.directory}\\server.jar`, 'nogui'], { cwd: config.directory })
+let launchArgs = config.launchArguments.split(' ')
+const mcServer = spawn('java', [...launchArgs, '-jar', `${config.directory}\\server.jar`, 'nogui'], { cwd: config.directory })
 
 // Bot ready
 mcBot.once('ready', async () => {
