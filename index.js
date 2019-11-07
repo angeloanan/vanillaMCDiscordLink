@@ -1,12 +1,13 @@
 const { spawn } = require('child_process')
 const fetch = require('node-fetch')
 const Discord = require('discord.js')
+const path = require('path')
 const config = JSON.parse(require('fs').readFileSync('./config.json'))
 
 const mcWebhook = new Discord.WebhookClient(config.webhook.id, config.webhook.secret, config.clientOptions)
 const mcBot = new Discord.Client(config.clientOptions)
 
-const loginParser = /([\w]+)\[[\d./:]+\] logged in with entity id \d+ at \([\d., ]+\)/
+const loginParser = /([\w]+)\[[\d./:]+\] logged in with entity id \d+ at \([\d.,\- ]+\)/
 const logoutParser = /([\w]+) left the game/
 const deathParser = /([A-Za-z]+ (?:was|walked|drowned|suffocated|experienced|removed|blew|fell|went|burned|tried|discovered|got|starved|fell|pummeled|died|withered) ?[\S ]*)/ // https://minecraft.gamepedia.com/Health
 const lostConnectionParser = /([\S]+) lost connection: [\S ]+/
@@ -18,7 +19,7 @@ const messageParser = /<([\w]+)> ([\S\t ]*)/
 let players = []
 
 let launchArgs = config.launchArguments.split(' ')
-const mcServer = spawn('java', [...launchArgs, '-jar', `${config.directory}\\server.jar`, 'nogui'], { cwd: config.directory })
+const mcServer = spawn('java', [...launchArgs, '-jar', `${path.join(config.directory, 'server.jar')}`, 'nogui'], { cwd: config.directory })
 
 // Bot ready
 mcBot.once('ready', async () => {
@@ -44,6 +45,8 @@ mcBot.on('message', (msg) => {
     let username = msg.author.username + '#' + msg.author.discriminator
     let message = msg.cleanContent.replace('\n', ' ')
     let extra = msg.attachments.size > 0 ? ',{"text":" (Attachment included)","color":"dark_gray","italic":true}' : ''
+
+    if (players.length === 0) return
 
     mcServer.stdin.write(`tellraw @a ["",{"text":"<${username}> ","color":"blue"},{"text":"${message}","color":"none"}${extra}]\n`)
   }

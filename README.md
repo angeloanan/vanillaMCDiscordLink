@@ -32,7 +32,9 @@
 
 ## 🧐 About <a name = "about"></a>
 
-This project links a Discord channel with a vanilla Minecraft server. Every time an in-game user chatted, the chat will be sent to the selected Discord Channel. And vice versa, every time a Discord user send a message on the selected channel, the message will be sent into the game by using `/tellraw`!
+This project links a Discord channel with a vanilla Minecraft server.
+
+Every time an in-game user chatted, the chat will be sent to the selected Discord Channel. And vice versa, every time a Discord user send a message on the selected channel, the message will be sent into the game by using `/tellraw`!
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
