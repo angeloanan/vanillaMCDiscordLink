@@ -7,14 +7,7 @@ const config = JSON.parse(require('fs').readFileSync('./config.json'))
 const mcWebhook = new Discord.WebhookClient(config.webhook.id, config.webhook.secret, config.clientOptions)
 const mcBot = new Discord.Client(config.clientOptions)
 
-const loginParser = /([\w]+)\[[\d./:]+\] logged in with entity id \d+ at \([\d.,\- ]+\)/
-const logoutParser = /([\w]+) left the game/
-const deathParser = /([A-Za-z]+ (?:was|walked|drowned|suffocated|experienced|removed|blew|fell|went|burned|tried|discovered|got|starved|fell|pummeled|died|withered) ?[\S ]*)/ // https://minecraft.gamepedia.com/Health
-const lostConnectionParser = /([\S]+) lost connection: [\S ]+/
-const lineParser = /\[[\d:]+\] \[([^/]+)\/([^\]]+)\]: ([\S ]+)/
-const messageParser = /<([\w]+)> ([\S\t ]*)/
-// const meParser = /\* h/
-// const sayParser = /a/
+const { loginParser, logoutParser, deathParser, lostConnectionParser, lineParser, messageParser } = require('./regex')
 
 let players = []
 
