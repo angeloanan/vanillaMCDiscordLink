@@ -30,14 +30,14 @@
   - Commit to the forked repository
   - Example:
 
-    ````
+    ````bash
     $ git commit -am 'Add some fooBar'
     ````
 
 - Push to the branch
   - Example:
 
-    ````
+    ````bash
     $ git push origin feature/fooBar
     ````
 

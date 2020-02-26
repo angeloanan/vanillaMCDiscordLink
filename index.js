@@ -53,7 +53,7 @@ mcBot.on('error', async (err) => {
 process.on('SIGINT', async () => {
   mcServer.stdin.write('stop\n')
 
-  await mcServer.on('exit', (code, sig) => {
+  mcServer.on('exit', (code, sig) => {
     console.log(`MCSERVER Exited: ${code} | ${sig}`)
     console.log(`NodeJS will exit now...`)
     process.exit()
@@ -63,7 +63,7 @@ process.on('SIGINT', async () => {
 process.on('SIGTERM', async () => {
   mcServer.stdin.write('stop\n')
 
-  await mcServer.on('exit', (code, sig) => {
+  mcServer.on('exit', (code, sig) => {
     console.log(`MCSERVER Exited: ${code} | ${sig}`)
     console.log(`NodeJS will exit now...`)
     process.exit()
